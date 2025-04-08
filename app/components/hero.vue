@@ -1,3 +1,6 @@
+<script setup lang="ts">
+  import src from '~/assets/AboutMeNoBg.avif'
+</script>
 <template>
   <div class="bg-background relative grid h-1/2 w-full grid-cols-1 grid-rows-1 rounded-lg border">
     <ClientOnly>
@@ -11,14 +14,7 @@
       />
     </ClientOnly>
     <div class="absolute inset-0 flex flex-col items-center justify-center">
-      <div class="h-60">
-        <ParticleImage
-          image-src="/AboutMeNoBg.avif"
-          :mouse-force="'15'"
-          class="h-full"
-          canvas-height="400"
-        />
-      </div>
+      <ParticleImage :image-src="src" :mouse-force="'15'" class="h-full" canvas-height="400" />
     </div>
   </div>
 </template>
