@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  import src from '~/assets/AboutMeNoBg.avif'
+  // import src from '~/assets/AboutMeNoBg.avif'
+  import src from '~/assets/image.png'
 </script>
 <template>
   <div class="bg-background relative grid h-1/2 w-full grid-cols-1 grid-rows-1 rounded-lg border">
