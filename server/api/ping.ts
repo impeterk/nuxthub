@@ -1,1 +1,5 @@
-export default eventHandler(() => 'pong')
+export default eventHandler(() => {
+  const now = Date.now()
+
+  return String(now)
+})

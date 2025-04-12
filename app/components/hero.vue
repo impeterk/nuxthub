@@ -1,21 +1,23 @@
 <script setup lang="ts">
   // import src from '~/assets/AboutMeNoBg.avif'
-  import src from '~/assets/image.png'
 </script>
 <template>
-  <div class="bg-background relative grid h-1/2 w-full grid-cols-1 grid-rows-1 rounded-lg border">
+  <div class="relative isolate bg-transparent">
     <ClientOnly>
-      <FlickeringGrid
-        class="relative inset-0 z-0"
-        :square-size="4"
-        :grid-gap="4"
-        color="#60A5FA"
-        :max-opacity="0.2"
-        :flicker-chance="0.6"
-      />
+      <HeroImage />
     </ClientOnly>
-    <div class="absolute inset-0 flex flex-col items-center justify-center">
-      <ParticleImage :image-src="src" :mouse-force="'15'" class="h-full" canvas-height="400" />
-    </div>
+
+    <LampEffect>
+      <span>
+        <ClientOnly fallback-tag="div">
+          <template #fallback>
+            <div class="size-12 bg-transparent" />
+          </template>
+          <TextGenerateEffect
+            words="Nuxt is an open source framework that makes web development intuitive and powerful.Create performant and production-grade full-stack web apps and websites with confidence."
+          />
+        </ClientOnly>
+      </span>
+    </LampEffect>
   </div>
 </template>
