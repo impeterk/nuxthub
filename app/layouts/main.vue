@@ -2,16 +2,7 @@
 
 <template>
   <div class="grid h-full grid-rows-[1fr_auto] sm:grid-rows-[auto_1fr_auto]">
-    <header class="bg-background sticky top-0 left-0 z-10 hidden border border-b sm:block">
-      <div class="container mx-auto py-2">
-        <ClientOnly>
-          <ColorMode />
-          <template #fallback>
-            <Button size="icon" variant="outline"> </Button>
-          </template>
-        </ClientOnly>
-      </div>
-    </header>
+    <Header />
     <main class="min-h-[1000px]">
       <slot />
     </main>
