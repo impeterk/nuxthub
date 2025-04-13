@@ -18,8 +18,8 @@
     gridGap?: number
     flickerChance?: number
     color?: string
-    width?: number
-    height?: number
+    width?: number | string
+    height?: number | string
     class?: string
     maxOpacity?: number
   }

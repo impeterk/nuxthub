@@ -7,15 +7,7 @@
         <ClientOnly>
           <ColorMode />
           <template #fallback>
-            <Button size="icon" variant="outline" class="rounded-l-xl rounded-r-none border-r-0">
-              <Icon name="lucide:sun" class="text-lg" />
-            </Button>
-            <Button size="icon" variant="outline" class="rounded-none border-r-0 border-l-0">
-              <Icon name="lucide:moon" class="text-lg" />
-            </Button>
-            <Button size="icon" variant="outline" class="rounded-l-none rounded-r-xl border-l-0">
-              <Icon name="lucide:monitor" class="text-lg" />
-            </Button>
+            <Button size="icon" variant="outline"> </Button>
           </template>
         </ClientOnly>
       </div>

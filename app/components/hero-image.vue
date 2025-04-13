@@ -5,7 +5,7 @@
   const color = computed(() => (colorMode.value === 'dark' ? '#f8fafc' : '#020618'))
 </script>
 <template>
-  <div class="absolute top-0 left-0 z-100 flex w-full items-center justify-center">
+  <div class="flex w-full items-center justify-center">
     <ClientOnly fallback-tag="div">
       <template #fallback>
         <div class="bg-translate aspect-square h-[250px]" />
