@@ -50,7 +50,6 @@
   }
 
   const props = defineProps<ParticleImageProps>()
-  console.log({ props })
 
   let particles: ImageParticle
   const imageParticleRef = ref<HTMLImageElement>()
