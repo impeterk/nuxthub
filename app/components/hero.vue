@@ -4,7 +4,12 @@
 <template>
   <section class="relative isolate min-h-[50vh] overflow-x-hidden bg-transparent font-sans">
     <div class="container mx-auto px-4">
-      <HeroImage />
+      <ClientOnly fallback-tag="div">
+        <template #fallback>
+          <div class="bg-translate aspect-square size-[250px]" />
+        </template>
+        <HeroImage />
+      </ClientOnly>
       <ClientOnly>
         <FlickeringGrid
           class="pointer-events-none absolute top-0 left-0 z-0 h-[50vh] w-screen [mask-image:radial-gradient(50vw_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(30vw_circle_at_center,white,transparent)]"
