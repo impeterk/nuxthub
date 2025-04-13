@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="grid h-full grid-rows-[1fr_auto] sm:grid-rows-[auto_1fr_auto]">
+  <div class="grid min-h-full grid-rows-[1fr_auto] sm:grid-rows-[auto_1fr_auto]">
     <Header />
     <main class="min-h-[1000px]">
       <slot />

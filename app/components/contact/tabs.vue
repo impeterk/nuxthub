@@ -1,5 +1,5 @@
 <template>
-  <Tabs default-value="contact" class="w-full max-w-lg">
+  <Tabs default-value="contact" class="w-full lg:max-w-lg">
     <TabsList class="grid w-full grid-cols-2">
       <TabsTrigger value="contact">
         <Icon name="lucide:send" />

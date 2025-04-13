@@ -54,6 +54,7 @@
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
   .neon-border-container {
     position: relative;
     display: inline-block;

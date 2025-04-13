@@ -2,7 +2,9 @@
   // import src from '~/assets/AboutMeNoBg.avif'
 </script>
 <template>
-  <section class="relative isolate min-h-[50vh] overflow-x-hidden bg-transparent font-sans">
+  <section
+    class="relative isolate min-h-[50vh] items-stretch overflow-x-hidden bg-transparent font-sans"
+  >
     <div class="container mx-auto px-4">
       <ClientOnly fallback-tag="div">
         <template #fallback>
