@@ -7,6 +7,7 @@
 <template>
   <div class="h-full">
     <Hero />
+    <ContactSection />
   </div>
 </template>
 

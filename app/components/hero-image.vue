@@ -8,7 +8,7 @@
   <div class="flex w-full items-center justify-center">
     <ClientOnly fallback-tag="div">
       <template #fallback>
-        <div class="bg-translate aspect-square h-[250px]" />
+        <div class="bg-translate aspect-square size-[250px]" />
       </template>
       <div class="bg-transparent" :key="color">
         <ParticleImage

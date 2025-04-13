@@ -2,7 +2,7 @@
   // import src from '~/assets/AboutMeNoBg.avif'
 </script>
 <template>
-  <section class="relative isolate h-full overflow-x-hidden bg-transparent font-sans">
+  <section class="relative isolate h-1/2 overflow-x-hidden bg-transparent font-sans">
     <div class="container mx-auto px-4">
       <ClientOnly fallback-tag="div">
         <HeroImage />
