@@ -4,4 +4,7 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <ClientOnly>
+    <Toaster closeButton />
+  </ClientOnly>
 </template>

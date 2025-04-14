@@ -2,6 +2,7 @@
   import { contactFormSchema } from '~~/shared/schema'
   import { Input } from '../ui/input'
   import { Textarea } from '../ui/textarea'
+  import { toast } from 'vue-sonner'
   const state = reactive({
     name: {
       label: 'Name',
@@ -27,7 +28,7 @@
   })
 
   const payload = ref<object | null>(null)
-  const { data, error, execute } = useFetch('/api/contact', {
+  const { data, error, execute, status } = useFetch('/api/contact', {
     immediate: false,
     watch: false,
     method: 'post',
@@ -48,15 +49,21 @@
       return null
     }
     payload.value = result.data
-    console.log(payload.value)
-    await execute()
-    if (data) {
+    toast.promise(async () => await execute(), {
+      loading: 'Sending message',
+      success: () => 'Message has been send ',
+    })
+    console.log('not waiting')
+    console.log(data.value)
+  }
+  watch(status, v => {
+    if (v === 'success') {
       payload.value = null
       state.name.value = ''
       state.email.value = ''
       state.message.value = ''
     }
-  }
+  })
   function handleChange(field: keyof typeof state) {
     if (state[field]?.error) {
       state[field].error = ''
@@ -65,7 +72,7 @@
 </script>
 
 <template>
-  <form @submit.prevent="submitForm">
+  <form @submit.prevent="submitForm" class="w-full">
     <Card>
       <CardHeader>
         <CardTitle> Get in touch </CardTitle>
@@ -83,13 +90,16 @@
               :ariaInvalid="Boolean(field.error)"
               @blur="handleChange(String(field.label).toLowerCase() as keyof typeof state)"
               :placeholder="field.placeholder"
+              class="overflow-hidden"
             />
             <Label v-if="field.error" class="text-destructive">{{ field.error }}</Label>
           </div>
         </template>
       </CardContent>
       <CardFooter>
-        <Button class="w-full"> <Icon name="lucide:send" type="submit" /> Send Message</Button>
+        <Button class="w-full" :disabled="status === 'pending'">
+          <Icon name="lucide:send" type="submit" /> Send Message</Button
+        >
       </CardFooter>
     </Card>
   </form>

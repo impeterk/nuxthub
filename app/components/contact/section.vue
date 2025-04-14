@@ -3,7 +3,7 @@
 <template>
   <section class="container mx-auto grid grid-flow-row gap-8 px-4 lg:grid-flow-col">
     <NeonBorder
-      class="h-full max-w-full"
+      class="h-full max-w-full shrink-0"
       :animation-type="'full'"
       :duration="18"
       color1="var(--primary)"
