@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import src from '~/assets/RiTerminalFill.png'
+  import src from '~/assets/hero-logo.avif'
 
   const colorMode = useColorMode()
   const color = computed(() => (colorMode.value === 'dark' ? '#f8fafc' : '#020618'))
