@@ -1,11 +1,11 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "9c1ec12f-ac18-49ab-b67b-6771de88f076",
+  "id": "a98f9fad-95df-4c39-b118-04040b9873b5",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "users": {
-      "name": "users",
+    "messages": {
+      "name": "messages",
       "columns": {
         "id": {
           "name": "id",

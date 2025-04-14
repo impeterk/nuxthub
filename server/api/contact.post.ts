@@ -12,7 +12,7 @@ export default defineEventHandler(async event => {
     })
   }
   console.log(result.data)
-  const message = useDrizzle().insert(tables.messages).values(result.data).returning()
+  const message = await useDrizzle().insert(tables.messages).values(result.data).returning().get()
   console.log({ message })
 
   return 'Hello route'
