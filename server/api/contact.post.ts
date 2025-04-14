@@ -1,4 +1,5 @@
 import { contactFormSchema } from '~~/shared/schema'
+import { tables, useDrizzle } from '../utils/drizzle'
 
 export default defineEventHandler(async event => {
   const body = await readBody(event)
@@ -11,6 +12,8 @@ export default defineEventHandler(async event => {
     })
   }
   console.log(result.data)
+  const message = useDrizzle().insert(tables.messages).values(result.data).returning()
+  console.log({ message })
 
   return 'Hello route'
 })

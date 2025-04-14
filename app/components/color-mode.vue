@@ -10,51 +10,40 @@
 </script>
 
 <template>
-  <DropdownMenu v-model:open="open">
+  <DropdownMenu>
     <DropdownMenuTrigger as-child>
       <Button variant="outline" size="icon">
-        <Icon :name="colorMode.value === 'light' ? 'lucide:sun' : 'lucide:moon'" />
+        <Icon
+          name="lucide:sun"
+          class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
+        />
+        <Icon
+          name="lucide:moon"
+          class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+        />
+        <span class="sr-only">Toggle theme</span>
       </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent as-child class="w-fit min-w-0 rounded-xl p-0">
-      <div class="inline-flex">
-        <Button
-          size="icon"
-          :variant="colorMode.preference === 'light' ? 'secondary' : 'outline'"
-          class="rounded-l-xl rounded-r-none border border-r-0"
-          @click="() => setColor('light')"
-        >
-          <Icon
-            name="lucide:sun"
-            class="text-lg"
-            :class="{ 'text-indigo-500': colorMode.preference === 'light' }"
-          />
-        </Button>
-        <Button
-          size="icon"
-          :variant="colorMode.preference === 'dark' ? 'secondary' : 'outline'"
-          class="rounded-none border border-r-0 border-l-0"
-          @click="() => setColor('dark')"
-        >
-          <Icon
-            name="lucide:moon"
-            :class="{ 'text-indigo-500': colorMode.preference === 'dark' }"
-            class="text-lg"
-          />
-        </Button>
-        <Button
-          size="icon"
-          :variant="colorMode.preference === 'system' ? 'secondary' : 'outline'"
-          class="rounded-l-none rounded-r-xl border border-l-0"
-          @click="() => setColor('system')"
-        >
-          <Icon
-            name="lucide:monitor"
-            :class="{ 'text-indigo-500': colorMode.preference === 'system' }"
-            class="text-lg"
-          />
-        </Button>
-      </div>
+    <DropdownMenuContent align="end">
+      <DropdownMenuItem @click="colorMode.preference = 'light'">
+        <div class="flex"><Icon name="lucide:sun" /></div>
+        Light
+      </DropdownMenuItem>
+      <DropdownMenuItem @click="colorMode.preference = 'dark'">
+        <div class="flex">
+          <Icon name="lucide:moon" />
+        </div>
+        Dark
+      </DropdownMenuItem>
+      <DropdownMenuItem @click="colorMode.preference = 'system'">
+        <div class="flex sm:hidden">
+          <Icon name="lucide:smartphone" />
+        </div>
+        <div class="hidden sm:flex">
+          <Icon name="lucide:monitor" />
+        </div>
+        System
+      </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>

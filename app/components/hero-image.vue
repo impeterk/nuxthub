@@ -15,7 +15,7 @@
         renderer="webgl"
         :mouse-force="'10'"
         canvas-height="275"
-        :responsive-width="true"
+        canvas-width="100%"
       />
     </div>
   </div>
