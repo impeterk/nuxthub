@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="container mx-auto grid grid-flow-row gap-8 px-4 lg:grid-flow-col">
+  <section
+    class="container mx-auto grid place-items-center gap-8 px-4 max-md:grid-rows-2 md:grid-cols-2"
+  >
     <NeonBorder
       class="h-full max-w-full shrink-0"
       :animation-type="'full'"
@@ -29,7 +31,7 @@
         </CardContent>
       </Card>
     </NeonBorder>
-    <ContactTabs class="shrink-0" />
+    <ContactTabs class="w-full shrink-0" />
   </section>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <Tabs default-value="contact" class="w-full lg:max-w-lg">
+  <Tabs default-value="contact" class="w-full">
     <TabsList class="grid w-full grid-cols-2">
       <TabsTrigger value="contact">
         <Icon name="lucide:send" />
@@ -11,6 +11,6 @@
       </TabsTrigger>
     </TabsList>
     <TabsContent value="contact"><ContactForm /></TabsContent>
-    <TabsContent value="book"> Hi </TabsContent>
+    <TabsContent value="book"> <ContactBook /> </TabsContent>
   </Tabs>
 </template>
