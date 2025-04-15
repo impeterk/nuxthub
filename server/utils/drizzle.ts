@@ -10,3 +10,4 @@ export function useDrizzle() {
 }
 
 export type Message = typeof schema.messages.$inferSelect
+export type Consultation = typeof schema.consutations.$inferSelect

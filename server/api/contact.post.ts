@@ -1,5 +1,4 @@
 import { contactFormSchema } from '~~/shared/schema'
-import { tables, useDrizzle } from '../utils/drizzle'
 
 export default defineEventHandler(async event => {
   await new Promise(res => setTimeout(res, 3000))

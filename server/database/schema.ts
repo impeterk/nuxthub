@@ -8,3 +8,11 @@ export const messages = sqliteTable('messages', {
   message: text('message').notNull(),
   createdAt: text('created_at').default(sql`(CURRENT_TIMESTAMP)`),
 })
+
+export const consutations = sqliteTable('consultations', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  email: text('email').notNull(),
+  date: text('date').notNull(),
+  time: text('time').notNull(),
+  createdAt: text('created_at').default(sql`(CURRENT_TIMESTAMP)`),
+})

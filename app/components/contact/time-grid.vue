@@ -11,8 +11,8 @@
         <div class="flex flex-col gap-2 rounded-none">
           <template v-for="m in mins" :key="m">
             <Button
-              @click="active = `${h}-${m}`"
-              :variant="active === `${h}-${m}` ? 'default' : 'ghost'"
+              @click.prevent="active = `${h}:${m}`"
+              :variant="active === `${h}:${m}` ? 'default' : 'ghost'"
             >
               {{ h }}: {{ m }}
             </Button>
