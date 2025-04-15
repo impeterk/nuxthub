@@ -18,7 +18,7 @@
     watch: false,
     immediate: false,
     method: 'post',
-    body: { date, hour, email },
+    body: { date, time: hour, email },
   })
 
   async function submitConsultation() {
