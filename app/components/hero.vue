@@ -1,6 +1,9 @@
 <script setup lang="ts">
   // import src from '~/assets/AboutMeNoBg.avif'
   import src from '~/assets/image.png'
+
+  const color = useColorMode()
+  const compColor = computed(() => (color.value === 'dark' ? '#FFF' : '#000'))
 </script>
 <template>
   <div class="bg-background relative grid h-1/2 w-full grid-cols-1 grid-rows-1 rounded-lg border">
@@ -14,8 +17,14 @@
         :flicker-chance="0.6"
       />
     </ClientOnly>
-    <div class="absolute inset-0 flex flex-col items-center justify-center">
-      <ParticleImage :image-src="src" :mouse-force="'15'" class="h-full" canvas-height="400" />
+    <div class="absolute inset-0 flex flex-col items-center justify-center" :key="compColor">
+      <ParticleImage
+        :color="compColor"
+        :image-src="src"
+        :mouse-force="'15'"
+        class="h-full"
+        canvas-height="400"
+      />
     </div>
   </div>
 </template>
